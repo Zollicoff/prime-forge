@@ -7,17 +7,24 @@ Shared memory repository for syncing knowledge between Claude Code instances and
 ```
 prime-memory-sync/
 ├── openclaw/
-│   └── memories.md              # Prime's MEMORY.md from OpenClaw
+│   └── memories.md                  # Prime's MEMORY.md from OpenClaw
 └── claude-code/
     ├── wsl-desktop/
-    │   └── YYYY-MM-DD/          # Daily snapshots
-    │       ├── project-a.jsonl
-    │       └── project-b.jsonl
+    │   └── YYYY-MM-DD/              # Daily snapshots
+    │       ├── project-name/
+    │       │   ├── *.jsonl           # Conversation transcripts
+    │       │   ├── subagents/*.jsonl  # Subagent transcripts
+    │       │   └── MEMORY.md         # Persistent memory summary (if exists)
+    │       └── ...
     ├── macbookpro/
     │   └── YYYY-MM-DD/
     └── macbookair/
         └── YYYY-MM-DD/
 ```
+
+Claude Code stores two types of memory per project:
+- **Conversation transcripts** (`~/.claude/projects/*/*.jsonl`) — full session histories including subagent logs
+- **MEMORY.md** (`~/.claude/projects/*/memory/MEMORY.md`) — persistent cross-session notes and patterns
 
 ## Usage
 
@@ -37,14 +44,29 @@ Prime pulls from this repo to learn what Claude Code has been working on across 
 
 ### Backing Up Claude Code Memories
 
-Copy memories from `~/.claude/projects/*/memory/` to the appropriate machine folder with today's date:
+Back up conversation transcripts and memory files from all projects:
 
 ```bash
 # Example for wsl-desktop
-mkdir -p claude-code/wsl-desktop/$(date +%Y-%m-%d)
-cp -r ~/.claude/projects/*/memory/*.jsonl claude-code/wsl-desktop/$(date +%Y-%m-%d)/
+DATE=$(date +%Y-%m-%d)
+DEST=claude-code/wsl-desktop/$DATE
+
+for dir in ~/.claude/projects/-home-*; do
+  project=$(basename "$dir" | sed 's/-home-[^-]*-Github-//' | sed 's/-home-[^-]*-//')
+  mkdir -p "$DEST/$project"
+
+  # Copy conversation transcripts
+  cp "$dir"/*.jsonl "$DEST/$project/" 2>/dev/null
+
+  # Copy subagent transcripts
+  find "$dir" -path "*/subagents/*.jsonl" -exec cp {} "$DEST/$project/" \; 2>/dev/null
+
+  # Copy MEMORY.md if it exists
+  [ -f "$dir/memory/MEMORY.md" ] && cp "$dir/memory/MEMORY.md" "$DEST/$project/"
+done
+
 git add .
-git commit -m "Backup wsl-desktop memories - $(date +%Y-%m-%d)"
+git commit -m "Backup wsl-desktop memories - $DATE"
 git push
 ```
 

@@ -1,0 +1,17 @@
+{
+  "adl_version": "1.0",
+  "source": "openclaw",
+  "exported_at": "2026-02-15T08:03:01.407468+00:00",
+  "agents": [
+    {
+      "id": "06bacc5a-83bd-54c8-a723-20b245c07fd9",
+      "name": "main",
+      "role": "Assistant"
+    },
+    {
+      "id": "b30965b5-764e-57b6-9b13-2e4b099e5891",
+      "name": "Prime - Shard 1",
+      "role": "Assistant"
+    }
+  ]
+}

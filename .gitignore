@@ -1,0 +1,7 @@
+# Ignore temporary files
+*.tmp
+*.swp
+.DS_Store
+
+# Keep directory structure but ignore empty dirs
+!.gitkeep

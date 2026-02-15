@@ -1,0 +1,219 @@
+{
+  "generated": "2026-02-15",
+  "frameworks": {
+    "OpenClaw": {
+      "language": "TypeScript/Node.js",
+      "min_ram": "~1GB",
+      "min_cost": "$599 (Mac Mini)",
+      "license": "Source-available",
+      "github_stars": "25K+",
+      "category": "Autonomous Agent Platform",
+      "features": {
+        "agent_loop": true,
+        "tool_calling": true,
+        "multi_agent": "sessions_spawn (sub-agents)",
+        "handoffs": false,
+        "guardrails": "Policy-based (tool allowlists)",
+        "memory_persistent": true,
+        "memory_types": [
+          "workspace files",
+          "MEMORY.md",
+          "daily logs",
+          "session history"
+        ],
+        "tracing": "Session JSONL logs",
+        "multi_channel": true,
+        "channels": [
+          "Discord",
+          "Telegram",
+          "WhatsApp",
+          "Signal",
+          "Slack",
+          "iMessage"
+        ],
+        "cron_scheduling": true,
+        "heartbeat_polling": true,
+        "voice_support": "TTS (ElevenLabs, etc.)",
+        "realtime_voice": false,
+        "browser_control": true,
+        "node_pairing": true,
+        "skills_system": true,
+        "human_in_loop": "Approval flows, elevated permissions",
+        "structured_output": false,
+        "streaming": true,
+        "deployment": "Self-hosted daemon"
+      },
+      "protocols": {
+        "MCP": "Native (tool provider + consumer)",
+        "A2A": "Via prime_a2a-bridge",
+        "ADL": "Via prime_openclaw-adl",
+        "OpenAPI": "Not native"
+      }
+    },
+    "OpenAI Agents SDK": {
+      "language": "Python",
+      "min_ram": "~100MB",
+      "min_cost": "API costs only",
+      "license": "MIT",
+      "github_stars": "15K+ (1 week old)",
+      "category": "Multi-Agent Framework",
+      "features": {
+        "agent_loop": true,
+        "tool_calling": true,
+        "multi_agent": "Native (handoffs + agents-as-tools)",
+        "handoffs": true,
+        "guardrails": "Native (input + output validation, parallel execution)",
+        "memory_persistent": "Sessions (in-memory or Redis)",
+        "memory_types": [
+          "conversation history",
+          "session state"
+        ],
+        "tracing": "Native (OpenAI dashboard, custom exporters)",
+        "multi_channel": false,
+        "channels": [],
+        "cron_scheduling": false,
+        "heartbeat_polling": false,
+        "voice_support": "Native realtime voice agents",
+        "realtime_voice": true,
+        "browser_control": false,
+        "node_pairing": false,
+        "skills_system": false,
+        "human_in_loop": "Native (approval callbacks)",
+        "structured_output": true,
+        "streaming": true,
+        "deployment": "Library (bring your own infra)"
+      },
+      "protocols": {
+        "MCP": "Native (tool consumer)",
+        "A2A": "Not native",
+        "ADL": "Not native",
+        "OpenAPI": "Via function tools"
+      }
+    },
+    "PicoClaw": {
+      "language": "Go",
+      "min_ram": "<10MB",
+      "min_cost": "$10 (RISC-V board)",
+      "license": "MIT",
+      "github_stars": "5K+ (6 days old)",
+      "category": "Ultra-Lightweight Agent",
+      "features": {
+        "agent_loop": true,
+        "tool_calling": true,
+        "multi_agent": false,
+        "handoffs": false,
+        "guardrails": false,
+        "memory_persistent": true,
+        "memory_types": [
+          "workspace files",
+          "planning logs"
+        ],
+        "tracing": "Basic logging",
+        "multi_channel": true,
+        "channels": [
+          "Discord",
+          "Telegram",
+          "QQ"
+        ],
+        "cron_scheduling": "Basic",
+        "heartbeat_polling": false,
+        "voice_support": false,
+        "realtime_voice": false,
+        "browser_control": false,
+        "node_pairing": false,
+        "skills_system": false,
+        "human_in_loop": false,
+        "structured_output": false,
+        "streaming": true,
+        "deployment": "Self-hosted binary"
+      },
+      "protocols": {
+        "MCP": "Planned",
+        "A2A": "Not native",
+        "ADL": "Not native",
+        "OpenAPI": "Not native"
+      }
+    },
+    "LangChain/LangGraph": {
+      "language": "Python/JS",
+      "min_ram": "~200MB",
+      "min_cost": "API costs only",
+      "license": "MIT",
+      "github_stars": "100K+",
+      "category": "Agent Framework + Orchestration",
+      "features": {
+        "agent_loop": true,
+        "tool_calling": true,
+        "multi_agent": "LangGraph (graph-based orchestration)",
+        "handoffs": "Via graph edges",
+        "guardrails": "LangChain callbacks + custom",
+        "memory_persistent": "LangMem, checkpointing",
+        "memory_types": [
+          "conversation buffer",
+          "vector store",
+          "checkpoints"
+        ],
+        "tracing": "LangSmith (SaaS)",
+        "multi_channel": false,
+        "channels": [],
+        "cron_scheduling": false,
+        "heartbeat_polling": false,
+        "voice_support": false,
+        "realtime_voice": false,
+        "browser_control": "Via tools",
+        "node_pairing": false,
+        "skills_system": "LangChain Hub",
+        "human_in_loop": "Interrupt nodes in LangGraph",
+        "structured_output": true,
+        "streaming": true,
+        "deployment": "LangGraph Cloud or self-hosted"
+      },
+      "protocols": {
+        "MCP": "Native integration",
+        "A2A": "Not native",
+        "ADL": "Not native",
+        "OpenAPI": "Native (API toolkit)"
+      }
+    },
+    "AutoGen (Microsoft)": {
+      "language": "Python",
+      "min_ram": "~200MB",
+      "min_cost": "API costs only",
+      "license": "MIT",
+      "github_stars": "40K+",
+      "category": "Multi-Agent Conversation Framework",
+      "features": {
+        "agent_loop": true,
+        "tool_calling": true,
+        "multi_agent": "Native (conversable agents, group chat)",
+        "handoffs": "Via conversation patterns",
+        "guardrails": "Custom termination conditions",
+        "memory_persistent": "Via external stores",
+        "memory_types": [
+          "conversation history",
+          "teachable agent memory"
+        ],
+        "tracing": "AgentOps integration",
+        "multi_channel": false,
+        "channels": [],
+        "cron_scheduling": false,
+        "heartbeat_polling": false,
+        "voice_support": false,
+        "realtime_voice": false,
+        "browser_control": "Via tools",
+        "node_pairing": false,
+        "skills_system": false,
+        "human_in_loop": "Human proxy agent",
+        "structured_output": true,
+        "streaming": true,
+        "deployment": "Library + merging with Semantic Kernel (Q1 2026)"
+      },
+      "protocols": {
+        "MCP": "Planned (via Semantic Kernel)",
+        "A2A": "Not native",
+        "ADL": "Not native",
+        "OpenAPI": "Via tools"
+      }
+    }
+  }
+}

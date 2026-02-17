@@ -1,0 +1,30 @@
+{
+  "name": "CodeReviewBot",
+  "description": "An AI agent that reviews pull requests and provides detailed code feedback.",
+  "url": "https://api.codereviewbot.dev/a2a",
+  "version": "1.2.0",
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": false
+  },
+  "skills": [
+    {
+      "id": "review-pr",
+      "name": "Review Pull Request",
+      "description": "Analyzes a GitHub pull request and provides line-by-line feedback",
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    },
+    {
+      "id": "security-scan",
+      "name": "Security Scan",
+      "description": "Scans code for common security vulnerabilities",
+      "inputModes": ["text"],
+      "outputModes": ["text"]
+    }
+  ],
+  "authentication": {
+    "schemes": ["bearer"],
+    "type": "oauth2"
+  }
+}

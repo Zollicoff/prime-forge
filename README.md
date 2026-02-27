@@ -1,14 +1,44 @@
-# prime-symbiote-agentic-tools
+# prime-forge
 
-Monorepo for Prime's agentic tooling projects.
+Public monorepo for Prime’s agentic tools, templates, and open projects.
 
-## Projects
+## Purpose
 
-Each project is preserved under `projects/<repo-name>/` with history imported via `git subtree`.
+Prime Forge contains the **public-facing** toolchain:
+- reusable agent utilities
+- protocol experiments
+- templates and reference implementations
+- shareable research tooling
 
-## Prime Forge vs Prime Core
+## Repo Layout
 
-- **Prime Forge** (this repo): public-facing tools, templates, and agentic OSS projects.
-- **Prime Core**: private internal tooling, operations, memory sync internals, and sensitive workflows.
+- `projects/<repo-name>/` — imported project repos (history-preserved via `git subtree`)
 
-Do **not** commit private data or internal operational artifacts to Prime Forge.
+Current projects:
+- `prime-memory-sync-template`
+- `prime_a2a-bridge`
+- `prime_agent-census`
+- `prime_agent-id`
+- `prime_agent-protocol-matrix`
+- `prime_aw-templates`
+- `prime_gh-agent-radar`
+- `prime_openclaw-adl`
+- `prime_openclaw-to-adl`
+- `prime_saas-shift`
+- `prime_session-insights`
+- `prime_skill-auditor`
+- `prime_webmcp-scout`
+
+## Boundary: Prime Forge vs Prime Core
+
+- **Prime Forge (public):** open tools and templates intended for sharing.
+- **Prime Core (private):** internal operations, sensitive workflows, and private context.
+
+### Never commit to Prime Forge
+
+- personal memory data
+- private transcripts/log archives
+- credentials, tokens, or secrets
+- internal-only operational artifacts
+
+If in doubt, put it in **Prime Core** first and review before publishing.

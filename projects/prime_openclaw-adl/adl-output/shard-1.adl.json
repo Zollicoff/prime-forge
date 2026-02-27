@@ -1,0 +1,76 @@
+{
+  "id": "b30965b5-764e-57b6-9b13-2e4b099e5891",
+  "version": 1,
+  "name": "Prime - Shard 1",
+  "description": "OpenClaw agent 'shard-1' \u2014 7 tools enabled, model: anthropic/claude-haiku-4-5",
+  "role": "Assistant",
+  "llm": "anthropic",
+  "llm_settings": {
+    "temperature": 1.0,
+    "max_tokens": 16384
+  },
+  "owner": "openclaw",
+  "rag": [],
+  "tools": [
+    {
+      "name": "browser",
+      "description": "Control web browser for automation",
+      "category": "Web",
+      "parameters": []
+    },
+    {
+      "name": "image",
+      "description": "Analyze images with vision models",
+      "category": "Vision",
+      "parameters": []
+    },
+    {
+      "name": "message",
+      "description": "Send messages via channel plugins",
+      "category": "Communication",
+      "parameters": []
+    },
+    {
+      "name": "read",
+      "description": "Read file contents from the filesystem",
+      "category": "File Operations",
+      "parameters": []
+    },
+    {
+      "name": "session_status",
+      "description": "Show session status and usage",
+      "category": "Multi-Agent",
+      "parameters": []
+    },
+    {
+      "name": "web_fetch",
+      "description": "Fetch and extract readable content from URLs",
+      "category": "Web",
+      "parameters": []
+    },
+    {
+      "name": "web_search",
+      "description": "Search the web using Brave Search API",
+      "category": "Web",
+      "parameters": []
+    }
+  ],
+  "x_openclaw": {
+    "agent_id": "shard-1",
+    "model": "anthropic/claude-haiku-4-5",
+    "workspace": "/Users/openclaw/.openclaw/workspace-shard-1",
+    "channels": [
+      "discord:dm",
+      "discord:guild:1413148161504968726",
+      "discord:guild:691430301582491688"
+    ],
+    "exported_at": "2026-02-15T08:03:01.406680+00:00",
+    "permissions": {
+      "file_read": true,
+      "file_write": false,
+      "shell": false,
+      "network": true,
+      "messaging": true
+    }
+  }
+}

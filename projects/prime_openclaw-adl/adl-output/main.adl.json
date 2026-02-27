@@ -1,0 +1,165 @@
+{
+  "id": "06bacc5a-83bd-54c8-a723-20b245c07fd9",
+  "version": 1,
+  "name": "main",
+  "description": "OpenClaw agent 'main' \u2014 22 tools enabled, model: anthropic/claude-sonnet-4-5",
+  "role": "Assistant",
+  "llm": "anthropic",
+  "llm_settings": {
+    "temperature": 1.0,
+    "max_tokens": 16384
+  },
+  "owner": "openclaw",
+  "rag": [],
+  "tools": [
+    {
+      "name": "browser",
+      "description": "Control web browser for automation",
+      "category": "Web",
+      "parameters": []
+    },
+    {
+      "name": "canvas",
+      "description": "Present and control UI canvases",
+      "category": "UI",
+      "parameters": []
+    },
+    {
+      "name": "cron",
+      "description": "Manage scheduled jobs and wake events",
+      "category": "Scheduling",
+      "parameters": []
+    },
+    {
+      "name": "edit",
+      "description": "Make precise edits to existing files",
+      "category": "File Operations",
+      "parameters": []
+    },
+    {
+      "name": "exec",
+      "description": "Execute shell commands",
+      "category": "System",
+      "parameters": []
+    },
+    {
+      "name": "gateway",
+      "description": "Manage the OpenClaw gateway daemon",
+      "category": "System",
+      "parameters": []
+    },
+    {
+      "name": "image",
+      "description": "Analyze images with vision models",
+      "category": "Vision",
+      "parameters": []
+    },
+    {
+      "name": "memory_get",
+      "description": "Read snippets from memory files",
+      "category": "Memory",
+      "parameters": []
+    },
+    {
+      "name": "memory_search",
+      "description": "Semantic search across memory files",
+      "category": "Memory",
+      "parameters": []
+    },
+    {
+      "name": "message",
+      "description": "Send messages via channel plugins",
+      "category": "Communication",
+      "parameters": []
+    },
+    {
+      "name": "nodes",
+      "description": "Discover and control paired nodes/devices",
+      "category": "IoT",
+      "parameters": []
+    },
+    {
+      "name": "process",
+      "description": "Manage background execution sessions",
+      "category": "System",
+      "parameters": []
+    },
+    {
+      "name": "read",
+      "description": "Read file contents from the filesystem",
+      "category": "File Operations",
+      "parameters": []
+    },
+    {
+      "name": "session_status",
+      "description": "Show session status and usage",
+      "category": "Multi-Agent",
+      "parameters": []
+    },
+    {
+      "name": "sessions_history",
+      "description": "Fetch session message history",
+      "category": "Multi-Agent",
+      "parameters": []
+    },
+    {
+      "name": "sessions_list",
+      "description": "List active sessions",
+      "category": "Multi-Agent",
+      "parameters": []
+    },
+    {
+      "name": "sessions_send",
+      "description": "Send messages to other sessions",
+      "category": "Multi-Agent",
+      "parameters": []
+    },
+    {
+      "name": "sessions_spawn",
+      "description": "Spawn background sub-agent sessions",
+      "category": "Multi-Agent",
+      "parameters": []
+    },
+    {
+      "name": "tts",
+      "description": "Convert text to speech",
+      "category": "Audio",
+      "parameters": []
+    },
+    {
+      "name": "web_fetch",
+      "description": "Fetch and extract readable content from URLs",
+      "category": "Web",
+      "parameters": []
+    },
+    {
+      "name": "web_search",
+      "description": "Search the web using Brave Search API",
+      "category": "Web",
+      "parameters": []
+    },
+    {
+      "name": "write",
+      "description": "Create or overwrite files",
+      "category": "File Operations",
+      "parameters": []
+    }
+  ],
+  "x_openclaw": {
+    "agent_id": "main",
+    "model": "anthropic/claude-sonnet-4-5",
+    "workspace": "/Users/openclaw/.openclaw/workspace",
+    "channels": [
+      "discord:dm",
+      "discord:guild:691430301582491688"
+    ],
+    "exported_at": "2026-02-15T08:03:01.406331+00:00",
+    "permissions": {
+      "file_read": true,
+      "file_write": true,
+      "shell": true,
+      "network": true,
+      "messaging": true
+    }
+  }
+}
